@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Candy Díaz - Especialista Senior en Ventas del Sector Farmacéutico. Más de 22 años de trayectoria en gestión estratégica, KOLs y promoción científica en laboratorios líderes.">
+    <meta name="keywords" content="Candy Díaz, Especialista Ventas Farmacéuticas, Gestión de KOLs, Marketing Farmacéutico, Promoción Científica, Chile">
+    <meta name="author" content="Candy Díaz">
+    <meta property="og:title" content="Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico">
+    <meta property="og:description" content="Más de 22 años transformando conocimiento científico en valor comercial estratégico para laboratorios líderes como Roche, Sanofi y Raffo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="candy_diaz.jpg">
+    
+    <title>Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #0055a4;
+            --secondary: #0066CC;
+            --accent: #00A8E8;
+            --gold: #D4AF37;
+            --gold-light: #F4E5A1;
+            --dark: #0a1929;
+            --dark-soft: #1a2942;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --linkedin: #0A66C2;
+            --gradient-primary: linear-gradient(135deg, #003366 0%, #0066CC 50%, #00A8E8 100%);
+            --gradient-hero: linear-gradient(135deg, #0a1929 0%, #003366 50%, #0055a4 100%);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4E5A1 50%, #D4AF37 100%);
+            --gradient-card: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            --shadow-sm: 0 4px 12px rgba(0, 51, 102, 0.06);
+            --shadow-md: 0 12px 32px rgba(0, 51, 102, 0.1);
+            --shadow-lg: 0 24px 64px rgba(0, 51, 102, 0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7; color: var(--dark); background: var(--light);
+            overflow-x: hidden; -webkit-font-smoothing: antialiased; cursor: none;
+        }
+
+        /* Cursor Personalizado de Alto Nivel */
+        .cursor-dot {
+            position: fixed; width: 6px; height: 6px; background: var(--gold);
+            border-radius: 50%; pointer-events: none; z-index: 9999;
+            transition: transform 0.1s ease; top: 0; left: 0;
+        }
+        .cursor-outline {
+            position: fixed; width: 36px; height: 36px; border: 1.5px solid rgba(212, 175, 55, 0.4);
+            border-radius: 50%; pointer-events: none; z-index: 9998;
+            transition: transform 0.25s ease, width 0.3s ease, height 0.3s ease; top: 0; left: 0;
+        }
+        .cursor-glow {
+            position: fixed; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none; z-index: 1;
+            transition: transform 0.6s ease; top: 0; left: 0;
+        }
+        body.cursor-hover .cursor-outline { width: 50px; height: 50px; border-color: var(--gold); }
+
+        /* Barra de Progreso */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: var(--gradient-gold); z-index: 10000;
+            transition: width 0.1s ease; box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Partículas Sutiles */
+        .particles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .particle {
+            position: absolute; width: 3px; height: 3px;
+            background: rgba(212, 175, 55, 0.2); border-radius: 50%;
+            animation: floatParticle 25s infinite linear;
+        }
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+            10% { opacity: 1; transform: translateY(90vh) translateX(15px) scale(1); }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) translateX(-15px) scale(0); opacity: 0; }
+        }
+
+        /* Navegación */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px);
+            z-index: 1000; padding: 1.2rem 0; transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 51, 102, 0.05);
+        }
+        nav.scrolled { padding: 0.8rem 0; box-shadow: var(--shadow-sm); }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
+            color: var(--primary); text-decoration: none; letter-spacing: -0.5px;
+        }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            color: var(--dark); text-decoration: none; font-weight: 500;
+            font-size: 0.95rem; position: relative; transition: var(--transition); cursor: none;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px;
+            background: var(--gold); transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary); }
+        .menu-toggle { display: none; background: none; border: none; cursor: none; font-size: 1.5rem; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh; background: var(--gradient-hero); color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; padding: 6rem 2rem 4rem;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 168, 232, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, -20px) scale(1.05); }
+        }
+        .hero-content {
+            max-width: 1100px; display: grid; grid-template-columns: 1fr 1.4fr;
+            gap: 4rem; align-items: center; position: relative; z-index: 2;
+        }
+        .hero-photo-wrapper { display: flex; justify-content: center; animation: fadeInLeft 1s ease 0.2s both; }
+        .hero-photo { position: relative; width: 340px; height: 340px; }
+        .hero-photo::before {
+            content: ''; position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px;
+            background: conic-gradient(from 0deg, var(--gold), var(--accent), var(--primary), var(--gold));
+            border-radius: 50%; animation: rotateBorder 10s linear infinite; z-index: -1;
+        }
+        .hero-photo::after {
+            content: ''; position: absolute; top: -25px; left: -25px; right: -25px; bottom: -25px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+            border-radius: 50%; filter: blur(25px); animation: pulse 4s ease-in-out infinite; z-index: -2;
+        }
+        @keyframes rotateBorder { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
+        
+        .hero-photo img {
+            width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); transition: var(--transition);
+        }
+        .hero-photo:hover img { transform: scale(1.02); }
+        
+        .photo-badge {
+            position: absolute; bottom: 15px; right: 15px; background: var(--gradient-gold);
+            color: var(--dark); width: 70px; height: 70px; border-radius: 50%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.8rem; box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+            border: 3px solid var(--white); z-index: 3; line-height: 1.1;
+        }
+
+        .hero-text { text-align: left; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 2rem;
+            backdrop-filter: blur(10px); animation: fadeInDown 1s ease; color: var(--gold-light);
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #4FC3F7 0%, #00A8E8 50%, #D4AF37 100%);
+            background-size: 200% 200%; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+            animation: gradientShift 5s ease infinite;
+        }
+        @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 1.5vw, 1.2rem); color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem; max-width: 650px; animation: fadeInUp 1s ease 0.6s both;
+            font-weight: 300; line-height: 1.7;
+        }
+        .hero-subtitle strong { color: var(--white); font-weight: 600; }
+        
+        .hero-cta { display: flex; gap: 1.2rem; flex-wrap: wrap; animation: fadeInUp 1s ease 0.8s both; }
+        .btn {
+            padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600;
+            font-size: 0.95rem; transition: var(--transition); display: inline-flex;
+            align-items: center; gap: 0.6rem; cursor: none; border: none; position: relative; overflow: hidden;
+        }
+        .btn-primary { background: var(--white); color: var(--primary); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
+        .btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255, 255, 255, 0.3); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--white); transform: translateY(-3px); }
+        
+        .scroll-indicator {
+            position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5); animation: bounce 2.5s infinite;
+        }
+        @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-8px); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+
+        /* Secciones Generales */
+        section { padding: 7rem 2rem; position: relative; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4.5rem; }
+        .section-tag {
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem;
+            background: rgba(0, 51, 102, 0.05); color: var(--primary); border-radius: 50px;
+            font-size: 0.8rem; font-weight: 600; margin-bottom: 1.2rem; letter-spacing: 1.5px; text-transform: uppercase;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 700; color: var(--dark); margin-bottom: 1rem; letter-spacing: -1px;
+        }
+        .section-subtitle { font-size: 1.1rem; color: var(--gray); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        /* About */
+        .about { background: var(--white); }
+        .about-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+        .about-text p { font-size: 1.05rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.8; }
+        .about-text strong { color: var(--primary); font-weight: 600; }
+        .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .stat-card {
+            background: var(--gradient-card); padding: 2rem; border-radius: var(--border-radius);
+            text-align: center; border: 1px solid var(--gray-light); transition: var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .stat-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--gold); }
+        .stat-icon {
+            width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--white);
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700;
+            color: var(--primary); margin-bottom: 0.3rem;
+        }
+        .stat-label { font-size: 0.9rem; color: var(--gray); font-weight: 500; }
+
+        /* Expertise */
+        .expertise { background: var(--light); }
+        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+        .expertise-card {
+            background: var(--white); padding: 2.5rem; border-radius: var(--border-radius);
+            transition: var(--transition); border: 1px solid var(--gray-light);
+            position: relative; overflow: hidden;
+        }
+        .expertise-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+        }
+        .expertise-card:hover::before { transform: scaleX(1); }
+        .expertise-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: transparent; }
+        .expertise-icon {
+            width: 64px; height: 64px; background: rgba(0, 51, 102, 0.05); border-radius: 16px;
+            display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+            color: var(--primary); transition: var(--transition);
+        }
+        .expertise-card:hover .expertise-icon { background: var(--gradient-primary); color: var(--white); transform: scale(1.1); }
+        .expertise-card h3 { font-size: 1.25rem; color: var(--dark); margin-bottom: 1rem; font-weight: 700; }
+        .expertise-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Experience */
+        .experience { background: var(--white); }
+        .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+        .timeline::before {
+            content: ''; position: absolute; left: 30px; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--primary));
+        }
+        .timeline-item { position: relative; padding-left: 80px; margin-bottom: 3.5rem; }
+        .timeline-dot {
+            position: absolute; left: 21px; top: 5px; width: 20px; height: 20px;
+            background: var(--white); border: 3px solid var(--gold); border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15); transition: var(--transition); z-index: 2;
+        }
+        .timeline-item:hover .timeline-dot { background: var(--gold); box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.4); transform: scale(1.2); }
+        .timeline-content {
+            background: var(--gradient-card); padding: 2rem; border-radius: var(--border-radius);
+            border: 1px solid var(--gray-light); transition: var(--transition);
+        }
+        .timeline-content:hover { transform: translateX(10px); box-shadow: var(--shadow-md); border-color: var(--gold); }
+        .timeline-date {
+            display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.9rem;
+            background: rgba(0, 51, 102, 0.05); color: var(--primary); border-radius: 50px;
+            font-size: 0.8rem; font-weight: 600; margin-bottom: 0.8rem;
+        }
+        .timeline-content h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 0.3rem; font-weight: 700; }
+        .timeline-content h4 { font-size: 1rem; color: var(--secondary); margin-bottom: 1rem; font-weight: 600; }
+        .timeline-content p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Skills */
+        .skills { background: var(--light); }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .skill-category {
+            background: var(--white); padding: 2.5rem; border-radius: var(--border-radius);
+            border: 1px solid var(--gray-light); transition: var(--transition);
+        }
+        .skill-category:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .skill-category h3 {
+            font-size: 1.15rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 700;
+            display: flex; align-items: center; gap: 0.7rem;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .skill-tag {
+            padding: 0.5rem 1.1rem; background: rgba(0, 51, 102, 0.04); color: var(--primary);
+            border-radius: 50px; font-size: 0.85rem; font-weight: 500; transition: var(--transition);
+            border: 1px solid transparent; cursor: none;
+        }
+        .skill-tag:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+        /* Education */
+        .education { background: var(--white); }
+        .education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .education-card {
+            background: var(--gradient-card); padding: 2rem; border-radius: var(--border-radius);
+            border: 1px solid var(--gray-light); transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .education-card.featured {
+            background: var(--gradient-primary); color: var(--white); border: none;
+            box-shadow: var(--shadow-lg);
+        }
+        .education-card.featured .education-year { background: rgba(255, 255, 255, 0.2); color: var(--white); }
+        .education-card.featured h3, .education-card.featured p { color: var(--white); }
+        .education-card.featured p { opacity: 0.9; }
+        .education-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .education-year {
+            display: inline-block; padding: 0.3rem 0.9rem; background: rgba(0, 51, 102, 0.05);
+            color: var(--primary); border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem;
+        }
+        .education-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 0.5rem; font-weight: 700; }
+        .education-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Contact */
+        .contact {
+            background: var(--gradient-hero); color: var(--white); text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .contact::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+        }
+        .contact-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .contact .section-title { color: var(--white); }
+        .contact .section-subtitle { color: rgba(255, 255, 255, 0.8); }
+        .contact-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem 1.5rem;
+            border-radius: var(--border-radius); text-decoration: none; color: var(--white);
+            transition: var(--transition); display: flex; flex-direction: column;
+            align-items: center; gap: 0.8rem; cursor: none;
+        }
+        .contact-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+        .contact-icon {
+            width: 56px; height: 56px; background: rgba(255, 255, 255, 0.1); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center; transition: var(--transition);
+        }
+        .contact-card:hover .contact-icon { background: var(--white); transform: scale(1.1); }
+        .contact-card:hover .contact-icon svg { fill: var(--primary); }
+        .contact-card h4 { font-size: 1rem; font-weight: 600; margin: 0; }
+        .contact-card p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin: 0; word-break: break-word; }
+
+        /* Footer */
+        footer { background: var(--dark); color: rgba(255, 255, 255, 0.5); padding: 2.5rem 2rem; text-align: center; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        footer strong { color: var(--white); font-weight: 600; }
+
+        /* Animaciones Scroll */
+        .fade-in, .fade-in-left, .fade-in-right, .scale-in { opacity: 0; transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in { transform: translateY(30px); }
+        .fade-in-left { transform: translateX(-40px); }
+        .fade-in-right { transform: translateX(40px); }
+        .scale-in { transform: scale(0.95); }
+        .fade-in.visible, .fade-in-left.visible, .fade-in-right.visible { opacity: 1; transform: translate(0); }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .hero-text { text-align: center; }
+            .hero-photo { width: 260px; height: 260px; }
+            .hero-cta { justify-content: center; }
+            .about-content { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        @media (max-width: 768px) {
+            body { cursor: auto; }
+            .cursor-dot, .cursor-outline, .cursor-glow { display: none; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--white); flex-direction: column; padding: 2rem;
+                gap: 1.5rem; box-shadow: var(--shadow-md);
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero { padding: 8rem 1.5rem 4rem; }
+            section { padding: 5rem 1.5rem; }
+            .timeline::before { left: 15px; }
+            .timeline-item { padding-left: 50px; }
+            .timeline-dot { left: 6px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.4rem; }
+            .hero-photo { width: 220px; height: 220px; }
+            .hero-cta { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+            .about-stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="cursor-glow"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="particles" id="particles"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">Candy Díaz</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Trayectoria</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#skills">Competencias</a></li>
+                <li><a href="#education">Formación</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-photo-wrapper">
+                <div class="hero-photo">
+                    <!-- FOTO LOCAL: Asegúrate de que candy_diaz.jpg esté en la misma carpeta -->
+                    <img src="candy_diaz.jpg" alt="Candy Díaz - Especialista Senior en Ventas Farmacéuticas">
+                    <div class="photo-badge">22+<br>AÑOS</div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    Excelencia en Ventas Farmacéuticas • Gestión Estratégica de KOLs
+                </div>
+                <h1>Candy Díaz<br><span class="highlight">Especialista Senior en Ventas del Sector Farmacéutico</span></h1>
+                <p class="hero-subtitle">
+                    Más de 22 años transformando conocimiento científico en valor comercial estratégico para laboratorios líderes como <strong>Roche, Sanofi y Raffo</strong>. Construyo alianzas de alto nivel basadas en ética, evidencia y resultados sostenibles.
+                </p>
+                <div class="hero-cta">
+                    <!-- BOTÓN DE DESCARGA DE CV -->
+                    <a href="CV_especialista_candy_diaz.pdf" download class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Descargar CV
+                    </a>
+                    <a href="#experience" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        Explorar Trayectoria
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Trayectoria
+                </span>
+                <h2 class="section-title">Una carrera consolidada en<br>la industria farmacéutica</h2>
+                <p class="section-subtitle">Visión 360° del negocio, desde la promoción científica de campo hasta la gerencia estratégica.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in-left">
+                    <p>
+                        Soy una <strong>Especialista Senior en Ventas del Sector Farmacéutico</strong> con más de 22 años de trayectoria ininterrumpida, especializada en promoción científica, gestión integral de territorios y desarrollo de relaciones de alto nivel con <strong>KOLs (Key Opinion Leaders)</strong>.
+                    </p>
+                    <p>
+                        Mi carrera me ha permitido desarrollar una perspectiva única del negocio, habiendo liderado estrategias en campo para multinacionales de élite como <strong>Roche y Sanofi</strong>, y complementado esta experiencia con roles gerenciales que fortalecieron mi capacidad de análisis, liderazgo de equipos y toma de decisiones basada en datos.
+                    </p>
+                    <p>
+                        Comprometida con la excelencia continua, he consolidado mi conocimiento del mercado chileno y sus regulaciones a través del <strong>Diplomado en Ventas y Marketing Farmacéutico de la Pontificia Universidad Católica de Chile</strong>.
+                    </p>
+                </div>
+                <div class="about-stats fade-in-right">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        </div>
+                        <div class="stat-number" data-target="22">0</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                        </div>
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Laboratorios de Élite</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 0 0 5 2h14a.3.3 0 0 0 .2.3l-3.6 8.3a2 2 0 0 1-1.6 1.2H9.9a2 2 0 0 1-1.6-1.2L4.8 2.3Z"/><path d="M12 12v10"/><path d="m8 22 4-2 4 2"/><path d="M8 17h8"/></svg>
+                        </div>
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">KOLs en Cartera</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                        </div>
+                        <div class="stat-number">PUC</div>
+                        <div class="stat-label">Diplomada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    Expertise
+                </span>
+                <h2 class="section-title">Áreas de Dominio Profesional</h2>
+                <p class="section-subtitle">Competencias de alto nivel que generan valor tangible y sostenible para la organización.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+                    </div>
+                    <h3>Ventas Estratégicas</h3>
+                    <p>Promoción científica ética y basada en evidencia, garantizando el cumplimiento de los más altos estándares de compliance y gobernanza corporativa.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Gestión de KOLs</h3>
+                    <p>Construcción y fidelización de relaciones de largo plazo con médicos clave, asegurando la adopción y el posicionamiento de especialidades médicas.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                    </div>
+                    <h3>Inteligencia de Mercado</h3>
+                    <p>Uso avanzado de herramientas como IQVIA/IMS para optimizar rutas, maximizar el ROI del territorio y anticipar tendencias competitivas.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                    </div>
+                    <h3>Marketing Farmacéutico</h3>
+                    <p>Diseño y ejecución de estrategias de lanzamiento, posicionamiento de marca y organización de simposios médicos de alto impacto científico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    Experiencia
+                </span>
+                <h2 class="section-title">Trayectoria Profesional</h2>
+                <p class="section-subtitle">Más de dos décadas construyendo una carrera sólida, adaptable y orientada a resultados en la industria farmacéutica y la gestión comercial.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2024 – Presente
+                        </span>
+                        <h3>Laboratorio Raffo Chile</h3>
+                        <h4>Especialista en Ventas del Sector Farmacéutico</h4>
+                        <p>Gestión integral del portafolio en el Área Metropolitana. Desarrollo de cartera de KOLs, análisis de mercado con IQVIA y optimización estratégica de rutas de visita para maximizar el ROI del territorio.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2017 – 2024
+                        </span>
+                        <h3>Autocenter_cl / Piamonte S.A.</h3>
+                        <h4>Ejecutiva de Ventas Senior (Ventas Complejas)</h4>
+                        <p>Gestión de ventas de alto ticket y desarrollo de cartera en mercado B2C/B2B altamente competitivo. Demostración de resiliencia, adaptación al mercado chileno y excelentes habilidades de negociación y cierre.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2015 – 2017
+                        </span>
+                        <h3>EcoPublicidad Ve</h3>
+                        <h4>Gerente General</h4>
+                        <p>Liderazgo de operatividad y productividad departamental. Diseño e implementación de estrategias digitales y de comunicación para cuentas corporativas, optimizando el retorno de inversión de las campañas.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2014 – 2015
+                        </span>
+                        <h3>LG Electronics</h3>
+                        <h4>Gerente de Producto – Línea Blanca</h4>
+                        <p>Diseño y ejecución de estrategias de marketing, merchandising y análisis competitivo. Gestión de clientes clave B2B y coordinación de equipos de campo para ejecución de campañas en punto de venta.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2011 – 2014
+                        </span>
+                        <h3>Sanofi</h3>
+                        <h4>Representante de Ventas</h4>
+                        <p>Promoción científica en Cardiología y Metabolismo, cumpliendo estándares de compliance de multinacional. Organización de actividades de marketing médico y gestión de cartera de +150 médicos especialistas.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2006 – 2011
+                        </span>
+                        <h3>Roche</h3>
+                        <h4>Representante de Ventas</h4>
+                        <p>Gestión de territorio y promoción de portafolio especializado con metodologías de venta consultiva basada en evidencia científica y construcción de relaciones de confianza con prescriptores.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                            2002 – 2006
+                        </span>
+                        <h3>Roemmers</h3>
+                        <h4>Representante de Ventas</h4>
+                        <p>Inicio y consolidación de carrera en la industria farmacéutica, desarrollando habilidades fundamentales en visita médica, conocimiento profundo de producto y manejo estratégico de objeciones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    Competencias
+                </span>
+                <h2 class="section-title">Habilidades Profesionales</h2>
+                <p class="section-subtitle">Un conjunto integral de competencias técnicas y directivas validadas por más de 22 años de experiencia comprobada.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+                        Ventas & Marketing
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Ventas Farmacéuticas</span>
+                        <span class="skill-tag">Promoción Científica</span>
+                        <span class="skill-tag">Marketing de Productos</span>
+                        <span class="skill-tag">Lanzamiento de Productos</span>
+                        <span class="skill-tag">Dispositivos Médicos</span>
+                        <span class="skill-tag">Visitador Médico Senior</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                        Gestión Estratégica
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Gestión de Territorios</span>
+                        <span class="skill-tag">Desarrollo de KOLs</span>
+                        <span class="skill-tag">Análisis IQVIA/IMS</span>
+                        <span class="skill-tag">Planificación Estratégica</span>
+                        <span class="skill-tag">Análisis Competitivo</span>
+                        <span class="skill-tag">Regulación Sanitaria</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+                        Habilidades Directivas
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Liderazgo de Equipos</span>
+                        <span class="skill-tag">Coordinación de Área</span>
+                        <span class="skill-tag">Negociación B2B/B2C</span>
+                        <span class="skill-tag">Gestión de Cartera</span>
+                        <span class="skill-tag">CRM</span>
+                        <span class="skill-tag">Orientación a Resultados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    Formación
+                </span>
+                <h2 class="section-title">Educación y Formación Continua</h2>
+                <p class="section-subtitle">Compromiso inquebrantable con la actualización constante y el desarrollo profesional de alto nivel.</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card featured scale-in">
+                    <span class="education-year">2024 – 2025</span>
+                    <h3>Pontificia Universidad Católica de Chile</h3>
+                    <p>Diplomado en Ventas y Marketing Farmacéutico y Dispositivos Médicos</p>
+                </div>
+                <div class="education-card fade-in">
+                    <span class="education-year">2011 – 2013</span>
+                    <h3>Universidad Central de Venezuela</h3>
+                    <p>Postgrado en Mercadeo para Empresas</p>
+                </div>
+                <div class="education-card fade-in">
+                    <span class="education-year">2014</span>
+                    <h3>Universidad Central de Venezuela</h3>
+                    <p>Programa Avanzado de Gerencia en Mercadeo y Competitividad</p>
+                </div>
+                <div class="education-card fade-in">
+                    <span class="education-year">2001 – 2003</span>
+                    <h3>Newport University</h3>
+                    <p>Bachelor of Business Administration (B.B.A.)</p>
+                </div>
+                <div class="education-card fade-in">
+                    <span class="education-year">TSU</span>
+                    <h3>Instituto Universitario de Nuevas Profesiones</h3>
+                    <p>TSU en Publicidad y Mercadeo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="section-header fade-in">
+                <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--gold-light); border: 1px solid rgba(212, 175, 55, 0.3);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Contacto
+                </span>
+                <h2 class="section-title">Diálogo Profesional</h2>
+                <p class="section-subtitle">
+                    Abierta a explorar alianzas estratégicas y roles de alto impacto que requieran una visión consolidada y resultados comprobados en la industria farmacéutica.
+                </p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:candy.diaz.pharma@gmail.com" class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </div>
+                    <h4>Correo Electrónico</h4>
+                    <p>candy.diaz.pharma@gmail.com</p>
+                </a>
+                
+                <!-- ICONO OFICIAL DE LINKEDIN -->
+                <a href="https://www.linkedin.com/in/candydiaz01" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <p>linkedin.com/in/candydiaz01</p>
+                </a>
+
+                <a href="tel:+56961314390" class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h4>Teléfono</h4>
+                    <p>+56 9 6131 4390</p>
+                </a>
+
+                <!-- ICONO OFICIAL DE WHATSAPP -->
+                <a href="https://wa.me/56961314390" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p>Mensaje directo</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 <strong>Candy Díaz</strong> • Especialista Senior en Ventas del Sector Farmacéutico • Santiago, Chile</p>
+    </footer>
+
+    <script>
+        // Cursor Personalizado
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const cursorGlow = document.querySelector('.cursor-glow');
+        let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0, glowX = 0, glowY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursorDot.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
+        });
+
+        function animateCursor() {
+            outlineX += (mouseX - outlineX) * 0.15;
+            outlineY += (mouseY - outlineY) * 0.15;
+            cursorOutline.style.transform = `translate(${outlineX - 18}px, ${outlineY - 18}px)`;
+            glowX += (mouseX - glowX) * 0.08;
+            glowY += (mouseY - glowY) * 0.08;
+            cursorGlow.style.transform = `translate(${glowX - 200}px, ${glowY - 200}px)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        const hoverElements = document.querySelectorAll('a, button, .expertise-card, .stat-card, .skill-tag, .contact-card, .timeline-content, .education-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // Barra de Progreso
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%';
+        });
+
+        // Partículas
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 25; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 25 + 's';
+            particle.style.animationDuration = (Math.random() * 15 + 20) + 's';
+            particle.style.width = (Math.random() * 3 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Navegación
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+
+        // Animaciones Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 80);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => observer.observe(el));
+
+        // Contador Animado
+        const animateCounter = (element, target) => {
+            const duration = 2000, steps = 60, increment = target / steps;
+            let current = 0;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) { element.textContent = target + '+'; clearInterval(timer); }
+                else { element.textContent = Math.floor(current) + '+'; }
+            }, duration / steps);
+        };
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stat-number[data-target]').forEach(stat => {
+                        animateCounter(stat, parseInt(stat.getAttribute('data-target')));
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        const aboutStats = document.querySelector('.about-stats');
+        if (aboutStats) statsObserver.observe(aboutStats);
+
+        // Efecto Tilt 3D
+        document.querySelectorAll('.expertise-card, .stat-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const rotateX = (e.clientY - rect.top - rect.height / 2) / 25;
+                const rotateY = (rect.width / 2 - (e.clientX - rect.left)) / 25;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
