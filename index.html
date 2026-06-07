@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Candy Díaz - Especialista Senior en Ventas del Sector Farmacéutico. Más de 22 años de trayectoria en gestión estratégica, KOLs y promoción científica en laboratorios líderes.">
-    <meta name="keywords" content="Candy Díaz, Especialista Ventas Farmacéuticas, Gestión de KOLs, Marketing Farmacéutico, Promoción Científica, Chile">
+    <meta name="description" content="Candy Díaz - Senior Pharmaceutical Sales Specialist. Over 22 years of experience in strategic management, KOLs and scientific promotion.">
+    <meta name="keywords" content="Candy Díaz, Pharmaceutical Sales, KOL Management, Pharmaceutical Marketing, Scientific Promotion, Chile">
     <meta name="author" content="Candy Díaz">
-    <meta property="og:title" content="Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico">
-    <meta property="og:description" content="Más de 22 años transformando conocimiento científico en valor comercial estratégico para laboratorios líderes como Roche, Sanofi y Raffo.">
+    <meta property="og:title" content="Candy Díaz | Senior Pharmaceutical Sales Specialist">
+    <meta property="og:description" content="Over 22 years transforming scientific knowledge into strategic commercial value for leading laboratories.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="candy_diaz.jpg">
     
-    <title>Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico</title>
+    <title data-i18n="pageTitle">Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +53,7 @@
             overflow-x: hidden; -webkit-font-smoothing: antialiased; cursor: none;
         }
 
-        /* Cursor Personalizado de Alto Nivel */
+        /* Cursor Personalizado */
         .cursor-dot {
             position: fixed; width: 6px; height: 6px; background: var(--gold);
             border-radius: 50%; pointer-events: none; z-index: 9999;
@@ -79,7 +79,7 @@
             transition: width 0.1s ease; box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
         }
 
-        /* Partículas Sutiles */
+        /* Partículas */
         .particles {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none; z-index: 0; overflow: hidden;
@@ -112,7 +112,7 @@
             font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
             color: var(--primary); text-decoration: none; letter-spacing: -0.5px;
         }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
         .nav-links a {
             color: var(--dark); text-decoration: none; font-weight: 500;
             font-size: 0.95rem; position: relative; transition: var(--transition); cursor: none;
@@ -123,6 +123,41 @@
         }
         .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--primary); }
+        
+        /* Botón de Idioma */
+        .language-toggle {
+            display: flex; align-items: center; gap: 0.5rem;
+            background: rgba(0, 51, 102, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            padding: 0.4rem 0.8rem;
+            cursor: none;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+        .language-toggle:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        .language-toggle.active {
+            background: var(--gold);
+            color: var(--white);
+        }
+        .lang-option {
+            padding: 0.2rem 0.4rem;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        .lang-option.active {
+            background: var(--white);
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
         .menu-toggle { display: none; background: none; border: none; cursor: none; font-size: 1.5rem; color: var(--primary); }
 
         /* Hero Section */
@@ -440,16 +475,23 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#hero" class="logo">Candy Díaz</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">Trayectoria</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#experience">Experiencia</a></li>
-                <li><a href="#skills">Competencias</a></li>
-                <li><a href="#education">Formación</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#about" data-i18n="nav.about">Trayectoria</a></li>
+                <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Competencias</a></li>
+                <li><a href="#education" data-i18n="nav.education">Formación</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+                <li>
+                    <div class="language-toggle" id="languageToggle">
+                        <span class="lang-option active" data-lang="es">ES</span>
+                        <span>/</span>
+                        <span class="lang-option" data-lang="en">EN</span>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -458,29 +500,27 @@
         <div class="hero-content">
             <div class="hero-photo-wrapper">
                 <div class="hero-photo">
-                    <!-- FOTO LOCAL: Asegúrate de que candy_diaz.jpg esté en la misma carpeta -->
-                    <img src="candy_diaz.jpg" alt="Candy Díaz - Especialista Senior en Ventas Farmacéuticas">
-                    <div class="photo-badge">22+<br>AÑOS</div>
+                    <img src="candy_diaz.jpg" alt="Candy Díaz - Senior Pharmaceutical Sales Specialist">
+                    <div class="photo-badge">22+<br><span data-i18n="hero.years">AÑOS</span></div>
                 </div>
             </div>
             <div class="hero-text">
                 <div class="hero-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-                    Excelencia en Ventas Farmacéuticas • Gestión Estratégica de KOLs
+                    <span data-i18n="hero.badge">Excelencia en Ventas Farmacéuticas • Gestión Estratégica de KOLs</span>
                 </div>
-                <h1>Candy Díaz<br><span class="highlight">Especialista Senior en Ventas del Sector Farmacéutico</span></h1>
-                <p class="hero-subtitle">
+                <h1>Candy Díaz<br><span class="highlight" data-i18n="hero.title">Especialista Senior en Ventas del Sector Farmacéutico</span></h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
                     Más de 22 años transformando conocimiento científico en valor comercial estratégico para laboratorios líderes como <strong>Roche, Sanofi y Raffo</strong>. Construyo alianzas de alto nivel basadas en ética, evidencia y resultados sostenibles.
                 </p>
                 <div class="hero-cta">
-                    <!-- BOTÓN DE DESCARGA DE CV -->
                     <a href="CV_especialista_candy_diaz.pdf" download class="btn btn-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Descargar CV
+                        <span data-i18n="hero.downloadCV">Descargar CV</span>
                     </a>
                     <a href="#experience" class="btn btn-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                        Explorar Trayectoria
+                        <span data-i18n="hero.exploreCareer">Explorar Trayectoria</span>
                     </a>
                 </div>
             </div>
@@ -495,20 +535,20 @@
             <div class="section-header fade-in">
                 <span class="section-tag">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Trayectoria
+                    <span data-i18n="about.sectionTag">Trayectoria</span>
                 </span>
-                <h2 class="section-title">Una carrera consolidada en<br>la industria farmacéutica</h2>
-                <p class="section-subtitle">Visión 360° del negocio, desde la promoción científica de campo hasta la gerencia estratégica.</p>
+                <h2 class="section-title" data-i18n="about.title">Una carrera consolidada en<br>la industria farmacéutica</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Visión 360° del negocio, desde la promoción científica de campo hasta la gerencia estratégica.</p>
             </div>
             <div class="about-content">
                 <div class="about-text fade-in-left">
-                    <p>
-                        Soy una <strong>Especialista Senior en Ventas del Sector Farmacéutico</strong> con más de 22 años de trayectoria ininterrumpida, especializada en promoción científica, gestión integral de territorios y desarrollo de relaciones de alto nivel con <strong>KOLs (Key Opinion Leaders)</strong>.
+                    <p data-i18n="about.p1">
+                        Soy una Especialista Senior en Ventas del Sector Farmacéutico con más de 22 años de trayectoria ininterrumpida, especializada en promoción científica, gestión integral de territorios y desarrollo de relaciones de alto nivel con <strong>KOLs (Key Opinion Leaders)</strong>.
                     </p>
-                    <p>
+                    <p data-i18n="about.p2">
                         Mi carrera me ha permitido desarrollar una perspectiva única del negocio, habiendo liderado estrategias en campo para multinacionales de élite como <strong>Roche y Sanofi</strong>, y complementado esta experiencia con roles gerenciales que fortalecieron mi capacidad de análisis, liderazgo de equipos y toma de decisiones basada en datos.
                     </p>
-                    <p>
+                    <p data-i18n="about.p3">
                         Comprometida con la excelencia continua, he consolidado mi conocimiento del mercado chileno y sus regulaciones a través del <strong>Diplomado en Ventas y Marketing Farmacéutico de la Pontificia Universidad Católica de Chile</strong>.
                     </p>
                 </div>
@@ -518,28 +558,28 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
                         </div>
                         <div class="stat-number" data-target="22">0</div>
-                        <div class="stat-label">Años de Experiencia</div>
+                        <div class="stat-label" data-i18n="about.stat1">Años de Experiencia</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
                         </div>
                         <div class="stat-number" data-target="3">0</div>
-                        <div class="stat-label">Laboratorios de Élite</div>
+                        <div class="stat-label" data-i18n="about.stat2">Laboratorios de Élite</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 0 0 5 2h14a.3.3 0 0 0 .2.3l-3.6 8.3a2 2 0 0 1-1.6 1.2H9.9a2 2 0 0 1-1.6-1.2L4.8 2.3Z"/><path d="M12 12v10"/><path d="m8 22 4-2 4 2"/><path d="M8 17h8"/></svg>
                         </div>
                         <div class="stat-number" data-target="150">0</div>
-                        <div class="stat-label">KOLs en Cartera</div>
+                        <div class="stat-label" data-i18n="about.stat3">KOLs en Cartera</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
                         </div>
                         <div class="stat-number">PUC</div>
-                        <div class="stat-label">Diplomada</div>
+                        <div class="stat-label" data-i18n="about.stat4">Diplomada</div>
                     </div>
                 </div>
             </div>
@@ -551,39 +591,39 @@
             <div class="section-header fade-in">
                 <span class="section-tag">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    Expertise
+                    <span data-i18n="expertise.sectionTag">Expertise</span>
                 </span>
-                <h2 class="section-title">Áreas de Dominio Profesional</h2>
-                <p class="section-subtitle">Competencias de alto nivel que generan valor tangible y sostenible para la organización.</p>
+                <h2 class="section-title" data-i18n="expertise.title">Áreas de Dominio Profesional</h2>
+                <p class="section-subtitle" data-i18n="expertise.subtitle">Competencias de alto nivel que generan valor tangible y sostenible para la organización.</p>
             </div>
             <div class="expertise-grid">
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
                     </div>
-                    <h3>Ventas Estratégicas</h3>
-                    <p>Promoción científica ética y basada en evidencia, garantizando el cumplimiento de los más altos estándares de compliance y gobernanza corporativa.</p>
+                    <h3 data-i18n="expertise.card1.title">Ventas Estratégicas</h3>
+                    <p data-i18n="expertise.card1.desc">Promoción científica ética y basada en evidencia, garantizando el cumplimiento de los más altos estándares de compliance y gobernanza corporativa.</p>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <h3>Gestión de KOLs</h3>
-                    <p>Construcción y fidelización de relaciones de largo plazo con médicos clave, asegurando la adopción y el posicionamiento de especialidades médicas.</p>
+                    <h3 data-i18n="expertise.card2.title">Gestión de KOLs</h3>
+                    <p data-i18n="expertise.card2.desc">Construcción y fidelización de relaciones de largo plazo con médicos clave, asegurando la adopción y el posicionamiento de especialidades médicas.</p>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
                     </div>
-                    <h3>Inteligencia de Mercado</h3>
-                    <p>Uso avanzado de herramientas como IQVIA/IMS para optimizar rutas, maximizar el ROI del territorio y anticipar tendencias competitivas.</p>
+                    <h3 data-i18n="expertise.card3.title">Inteligencia de Mercado</h3>
+                    <p data-i18n="expertise.card3.desc">Uso avanzado de herramientas como IQVIA/IMS para optimizar rutas, maximizar el ROI del territorio y anticipar tendencias competitivas.</p>
                 </div>
                 <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
                     </div>
-                    <h3>Marketing Farmacéutico</h3>
-                    <p>Diseño y ejecución de estrategias de lanzamiento, posicionamiento de marca y organización de simposios médicos de alto impacto científico.</p>
+                    <h3 data-i18n="expertise.card4.title">Marketing Farmacéutico</h3>
+                    <p data-i18n="expertise.card4.desc">Diseño y ejecución de estrategias de lanzamiento, posicionamiento de marca y organización de simposios médicos de alto impacto científico.</p>
                 </div>
             </div>
         </div>
@@ -594,10 +634,10 @@
             <div class="section-header fade-in">
                 <span class="section-tag">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                    Experiencia
+                    <span data-i18n="experience.sectionTag">Experiencia</span>
                 </span>
-                <h2 class="section-title">Trayectoria Profesional</h2>
-                <p class="section-subtitle">Más de dos décadas construyendo una carrera sólida, adaptable y orientada a resultados en la industria farmacéutica y la gestión comercial.</p>
+                <h2 class="section-title" data-i18n="experience.title">Trayectoria Profesional</h2>
+                <p class="section-subtitle" data-i18n="experience.subtitle">Más de dos décadas construyendo una carrera sólida, adaptable y orientada a resultados en la industria farmacéutica y la gestión comercial.</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item fade-in-left">
@@ -605,11 +645,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2024 – Presente
+                            <span data-i18n="experience.job1.date">2024 – Presente</span>
                         </span>
-                        <h3>Laboratorio Raffo Chile</h3>
-                        <h4>Especialista en Ventas del Sector Farmacéutico</h4>
-                        <p>Gestión integral del portafolio en el Área Metropolitana. Desarrollo de cartera de KOLs, análisis de mercado con IQVIA y optimización estratégica de rutas de visita para maximizar el ROI del territorio.</p>
+                        <h3 data-i18n="experience.job1.company">Laboratorio Raffo Chile</h3>
+                        <h4 data-i18n="experience.job1.position">Especialista en Ventas del Sector Farmacéutico</h4>
+                        <p data-i18n="experience.job1.desc">Gestión integral del portafolio en el Área Metropolitana. Desarrollo de cartera de KOLs, análisis de mercado con IQVIA y optimización estratégica de rutas de visita para maximizar el ROI del territorio.</p>
                     </div>
                 </div>
 
@@ -618,11 +658,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2017 – 2024
+                            <span data-i18n="experience.job2.date">2017 – 2024</span>
                         </span>
-                        <h3>Autocenter_cl / Piamonte S.A.</h3>
-                        <h4>Ejecutiva de Ventas Senior (Ventas Complejas)</h4>
-                        <p>Gestión de ventas de alto ticket y desarrollo de cartera en mercado B2C/B2B altamente competitivo. Demostración de resiliencia, adaptación al mercado chileno y excelentes habilidades de negociación y cierre.</p>
+                        <h3 data-i18n="experience.job2.company">Autocenter_cl / Piamonte S.A.</h3>
+                        <h4 data-i18n="experience.job2.position">Ejecutiva de Ventas Senior (Ventas Complejas)</h4>
+                        <p data-i18n="experience.job2.desc">Gestión de ventas de alto ticket y desarrollo de cartera en mercado B2C/B2B altamente competitivo. Demostración de resiliencia, adaptación al mercado chileno y excelentes habilidades de negociación y cierre.</p>
                     </div>
                 </div>
 
@@ -631,11 +671,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2015 – 2017
+                            <span data-i18n="experience.job3.date">2015 – 2017</span>
                         </span>
-                        <h3>EcoPublicidad Ve</h3>
-                        <h4>Gerente General</h4>
-                        <p>Liderazgo de operatividad y productividad departamental. Diseño e implementación de estrategias digitales y de comunicación para cuentas corporativas, optimizando el retorno de inversión de las campañas.</p>
+                        <h3 data-i18n="experience.job3.company">EcoPublicidad Ve</h3>
+                        <h4 data-i18n="experience.job3.position">Gerente General</h4>
+                        <p data-i18n="experience.job3.desc">Liderazgo de operatividad y productividad departamental. Diseño e implementación de estrategias digitales y de comunicación para cuentas corporativas, optimizando el retorno de inversión de las campañas.</p>
                     </div>
                 </div>
 
@@ -644,11 +684,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2014 – 2015
+                            <span data-i18n="experience.job4.date">2014 – 2015</span>
                         </span>
-                        <h3>LG Electronics</h3>
-                        <h4>Gerente de Producto – Línea Blanca</h4>
-                        <p>Diseño y ejecución de estrategias de marketing, merchandising y análisis competitivo. Gestión de clientes clave B2B y coordinación de equipos de campo para ejecución de campañas en punto de venta.</p>
+                        <h3 data-i18n="experience.job4.company">LG Electronics</h3>
+                        <h4 data-i18n="experience.job4.position">Gerente de Producto – Línea Blanca</h4>
+                        <p data-i18n="experience.job4.desc">Diseño y ejecución de estrategias de marketing, merchandising y análisis competitivo. Gestión de clientes clave B2B y coordinación de equipos de campo para ejecución de campañas en punto de venta.</p>
                     </div>
                 </div>
 
@@ -657,11 +697,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2011 – 2014
+                            <span data-i18n="experience.job5.date">2011 – 2014</span>
                         </span>
-                        <h3>Sanofi</h3>
-                        <h4>Representante de Ventas</h4>
-                        <p>Promoción científica en Cardiología y Metabolismo, cumpliendo estándares de compliance de multinacional. Organización de actividades de marketing médico y gestión de cartera de +150 médicos especialistas.</p>
+                        <h3 data-i18n="experience.job5.company">Sanofi</h3>
+                        <h4 data-i18n="experience.job5.position">Representante de Ventas</h4>
+                        <p data-i18n="experience.job5.desc">Promoción científica en Cardiología y Metabolismo, cumpliendo estándares de compliance de multinacional. Organización de actividades de marketing médico y gestión de cartera de +150 médicos especialistas.</p>
                     </div>
                 </div>
 
@@ -670,11 +710,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2006 – 2011
+                            <span data-i18n="experience.job6.date">2006 – 2011</span>
                         </span>
-                        <h3>Roche</h3>
-                        <h4>Representante de Ventas</h4>
-                        <p>Gestión de territorio y promoción de portafolio especializado con metodologías de venta consultiva basada en evidencia científica y construcción de relaciones de confianza con prescriptores.</p>
+                        <h3 data-i18n="experience.job6.company">Roche</h3>
+                        <h4 data-i18n="experience.job6.position">Representante de Ventas</h4>
+                        <p data-i18n="experience.job6.desc">Gestión de territorio y promoción de portafolio especializado con metodologías de venta consultiva basada en evidencia científica y construcción de relaciones de confianza con prescriptores.</p>
                     </div>
                 </div>
 
@@ -683,11 +723,11 @@
                     <div class="timeline-content">
                         <span class="timeline-date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                            2002 – 2006
+                            <span data-i18n="experience.job7.date">2002 – 2006</span>
                         </span>
-                        <h3>Roemmers</h3>
-                        <h4>Representante de Ventas</h4>
-                        <p>Inicio y consolidación de carrera en la industria farmacéutica, desarrollando habilidades fundamentales en visita médica, conocimiento profundo de producto y manejo estratégico de objeciones.</p>
+                        <h3 data-i18n="experience.job7.company">Roemmers</h3>
+                        <h4 data-i18n="experience.job7.position">Representante de Ventas</h4>
+                        <p data-i18n="experience.job7.desc">Inicio y consolidación de carrera en la industria farmacéutica, desarrollando habilidades fundamentales en visita médica, conocimiento profundo de producto y manejo estratégico de objeciones.</p>
                     </div>
                 </div>
             </div>
@@ -699,52 +739,52 @@
             <div class="section-header fade-in">
                 <span class="section-tag">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                    Competencias
+                    <span data-i18n="skills.sectionTag">Competencias</span>
                 </span>
-                <h2 class="section-title">Habilidades Profesionales</h2>
-                <p class="section-subtitle">Un conjunto integral de competencias técnicas y directivas validadas por más de 22 años de experiencia comprobada.</p>
+                <h2 class="section-title" data-i18n="skills.title">Habilidades Profesionales</h2>
+                <p class="section-subtitle" data-i18n="skills.subtitle">Un conjunto integral de competencias técnicas y directivas validadas por más de 22 años de experiencia comprobada.</p>
             </div>
             <div class="skills-grid">
                 <div class="skill-category fade-in">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
-                        Ventas & Marketing
+                        <span data-i18n="skills.cat1">Ventas & Marketing</span>
                     </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Ventas Farmacéuticas</span>
-                        <span class="skill-tag">Promoción Científica</span>
-                        <span class="skill-tag">Marketing de Productos</span>
-                        <span class="skill-tag">Lanzamiento de Productos</span>
-                        <span class="skill-tag">Dispositivos Médicos</span>
-                        <span class="skill-tag">Visitador Médico Senior</span>
+                        <span class="skill-tag" data-i18n="skills.tag1">Ventas Farmacéuticas</span>
+                        <span class="skill-tag" data-i18n="skills.tag2">Promoción Científica</span>
+                        <span class="skill-tag" data-i18n="skills.tag3">Marketing de Productos</span>
+                        <span class="skill-tag" data-i18n="skills.tag4">Lanzamiento de Productos</span>
+                        <span class="skill-tag" data-i18n="skills.tag5">Dispositivos Médicos</span>
+                        <span class="skill-tag" data-i18n="skills.tag6">Visitador Médico Senior</span>
                     </div>
                 </div>
                 <div class="skill-category fade-in">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                        Gestión Estratégica
+                        <span data-i18n="skills.cat2">Gestión Estratégica</span>
                     </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Gestión de Territorios</span>
-                        <span class="skill-tag">Desarrollo de KOLs</span>
-                        <span class="skill-tag">Análisis IQVIA/IMS</span>
-                        <span class="skill-tag">Planificación Estratégica</span>
-                        <span class="skill-tag">Análisis Competitivo</span>
-                        <span class="skill-tag">Regulación Sanitaria</span>
+                        <span class="skill-tag" data-i18n="skills.tag7">Gestión de Territorios</span>
+                        <span class="skill-tag" data-i18n="skills.tag8">Desarrollo de KOLs</span>
+                        <span class="skill-tag" data-i18n="skills.tag9">Análisis IQVIA/IMS</span>
+                        <span class="skill-tag" data-i18n="skills.tag10">Planificación Estratégica</span>
+                        <span class="skill-tag" data-i18n="skills.tag11">Análisis Competitivo</span>
+                        <span class="skill-tag" data-i18n="skills.tag12">Regulación Sanitaria</span>
                     </div>
                 </div>
                 <div class="skill-category fade-in">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
-                        Habilidades Directivas
+                        <span data-i18n="skills.cat3">Habilidades Directivas</span>
                     </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Liderazgo de Equipos</span>
-                        <span class="skill-tag">Coordinación de Área</span>
-                        <span class="skill-tag">Negociación B2B/B2C</span>
-                        <span class="skill-tag">Gestión de Cartera</span>
-                        <span class="skill-tag">CRM</span>
-                        <span class="skill-tag">Orientación a Resultados</span>
+                        <span class="skill-tag" data-i18n="skills.tag13">Liderazgo de Equipos</span>
+                        <span class="skill-tag" data-i18n="skills.tag14">Coordinación de Área</span>
+                        <span class="skill-tag" data-i18n="skills.tag15">Negociación B2B/B2C</span>
+                        <span class="skill-tag" data-i18n="skills.tag16">Gestión de Cartera</span>
+                        <span class="skill-tag" data-i18n="skills.tag17">CRM</span>
+                        <span class="skill-tag" data-i18n="skills.tag18">Orientación a Resultados</span>
                     </div>
                 </div>
             </div>
@@ -756,36 +796,36 @@
             <div class="section-header fade-in">
                 <span class="section-tag">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                    Formación
+                    <span data-i18n="education.sectionTag">Formación</span>
                 </span>
-                <h2 class="section-title">Educación y Formación Continua</h2>
-                <p class="section-subtitle">Compromiso inquebrantable con la actualización constante y el desarrollo profesional de alto nivel.</p>
+                <h2 class="section-title" data-i18n="education.title">Educación y Formación Continua</h2>
+                <p class="section-subtitle" data-i18n="education.subtitle">Compromiso inquebrantable con la actualización constante y el desarrollo profesional de alto nivel.</p>
             </div>
             <div class="education-grid">
                 <div class="education-card featured scale-in">
                     <span class="education-year">2024 – 2025</span>
-                    <h3>Pontificia Universidad Católica de Chile</h3>
-                    <p>Diplomado en Ventas y Marketing Farmacéutico y Dispositivos Médicos</p>
+                    <h3 data-i18n="education.edu1.school">Pontificia Universidad Católica de Chile</h3>
+                    <p data-i18n="education.edu1.degree">Diplomado en Ventas y Marketing Farmacéutico y Dispositivos Médicos</p>
                 </div>
                 <div class="education-card fade-in">
                     <span class="education-year">2011 – 2013</span>
-                    <h3>Universidad Central de Venezuela</h3>
-                    <p>Postgrado en Mercadeo para Empresas</p>
+                    <h3 data-i18n="education.edu2.school">Universidad Central de Venezuela</h3>
+                    <p data-i18n="education.edu2.degree">Postgrado en Mercadeo para Empresas</p>
                 </div>
                 <div class="education-card fade-in">
                     <span class="education-year">2014</span>
-                    <h3>Universidad Central de Venezuela</h3>
-                    <p>Programa Avanzado de Gerencia en Mercadeo y Competitividad</p>
+                    <h3 data-i18n="education.edu3.school">Universidad Central de Venezuela</h3>
+                    <p data-i18n="education.edu3.degree">Programa Avanzado de Gerencia en Mercadeo y Competitividad</p>
                 </div>
                 <div class="education-card fade-in">
                     <span class="education-year">2001 – 2003</span>
-                    <h3>Newport University</h3>
-                    <p>Bachelor of Business Administration (B.B.A.)</p>
+                    <h3 data-i18n="education.edu4.school">Newport University</h3>
+                    <p data-i18n="education.edu4.degree">Bachelor of Business Administration (B.B.A.)</p>
                 </div>
                 <div class="education-card fade-in">
                     <span class="education-year">TSU</span>
-                    <h3>Instituto Universitario de Nuevas Profesiones</h3>
-                    <p>TSU en Publicidad y Mercadeo</p>
+                    <h3 data-i18n="education.edu5.school">Instituto Universitario de Nuevas Profesiones</h3>
+                    <p data-i18n="education.edu5.degree">TSU en Publicidad y Mercadeo</p>
                 </div>
             </div>
         </div>
@@ -796,10 +836,10 @@
             <div class="section-header fade-in">
                 <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--gold-light); border: 1px solid rgba(212, 175, 55, 0.3);">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    Contacto
+                    <span data-i18n="contact.sectionTag">Contacto</span>
                 </span>
-                <h2 class="section-title">Diálogo Profesional</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-i18n="contact.title">Diálogo Profesional</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">
                     Abierta a explorar alianzas estratégicas y roles de alto impacto que requieran una visión consolidada y resultados comprobados en la industria farmacéutica.
                 </p>
             </div>
@@ -808,11 +848,10 @@
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </div>
-                    <h4>Correo Electrónico</h4>
+                    <h4 data-i18n="contact.email">Correo Electrónico</h4>
                     <p>candy.diaz.pharma@gmail.com</p>
                 </a>
                 
-                <!-- ICONO OFICIAL DE LINKEDIN -->
                 <a href="https://www.linkedin.com/in/candydiaz01" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -825,27 +864,299 @@
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     </div>
-                    <h4>Teléfono</h4>
+                    <h4 data-i18n="contact.phone">Teléfono</h4>
                     <p>+56 9 6131 4390</p>
                 </a>
 
-                <!-- ICONO OFICIAL DE WHATSAPP -->
                 <a href="https://wa.me/56961314390" target="_blank" rel="noopener noreferrer" class="contact-card fade-in">
                     <div class="contact-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                     </div>
                     <h4>WhatsApp</h4>
-                    <p>Mensaje directo</p>
+                    <p data-i18n="contact.whatsapp">Mensaje directo</p>
                 </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 <strong>Candy Díaz</strong> • Especialista Senior en Ventas del Sector Farmacéutico • Santiago, Chile</p>
+        <p>© 2025 <strong>Candy Díaz</strong> • <span data-i18n="footer.text">Especialista Senior en Ventas del Sector Farmacéutico • Santiago, Chile</span></p>
     </footer>
 
     <script>
+        // Traducciones
+        const translations = {
+            es: {
+                pageTitle: "Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico",
+                nav: {
+                    about: "Trayectoria",
+                    expertise: "Expertise",
+                    experience: "Experiencia",
+                    skills: "Competencias",
+                    education: "Formación",
+                    contact: "Contacto"
+                },
+                hero: {
+                    years: "AÑOS",
+                    badge: "Excelencia en Ventas Farmacéuticas • Gestión Estratégica de KOLs",
+                    title: "Especialista Senior en Ventas del Sector Farmacéutico",
+                    subtitle: "Más de 22 años transformando conocimiento científico en valor comercial estratégico para laboratorios líderes como <strong>Roche, Sanofi y Raffo</strong>. Construyo alianzas de alto nivel basadas en ética, evidencia y resultados sostenibles.",
+                    downloadCV: "Descargar CV",
+                    exploreCareer: "Explorar Trayectoria"
+                },
+                about: {
+                    sectionTag: "Trayectoria",
+                    title: "Una carrera consolidada en<br>la industria farmacéutica",
+                    subtitle: "Visión 360° del negocio, desde la promoción científica de campo hasta la gerencia estratégica.",
+                    p1: "Soy una Especialista Senior en Ventas del Sector Farmacéutico con más de 22 años de trayectoria ininterrumpida, especializada en promoción científica, gestión integral de territorios y desarrollo de relaciones de alto nivel con <strong>KOLs (Key Opinion Leaders)</strong>.",
+                    p2: "Mi carrera me ha permitido desarrollar una perspectiva única del negocio, habiendo liderado estrategias en campo para multinacionales de élite como <strong>Roche y Sanofi</strong>, y complementado esta experiencia con roles gerenciales que fortalecieron mi capacidad de análisis, liderazgo de equipos y toma de decisiones basada en datos.",
+                    p3: "Comprometida con la excelencia continua, he consolidado mi conocimiento del mercado chileno y sus regulaciones a través del <strong>Diplomado en Ventas y Marketing Farmacéutico de la Pontificia Universidad Católica de Chile</strong>.",
+                    stat1: "Años de Experiencia",
+                    stat2: "Laboratorios de Élite",
+                    stat3: "KOLs en Cartera",
+                    stat4: "Diplomada"
+                },
+                expertise: {
+                    sectionTag: "Expertise",
+                    title: "Áreas de Dominio Profesional",
+                    subtitle: "Competencias de alto nivel que generan valor tangible y sostenible para la organización.",
+                    card1: {
+                        title: "Ventas Estratégicas",
+                        desc: "Promoción científica ética y basada en evidencia, garantizando el cumplimiento de los más altos estándares de compliance y gobernanza corporativa."
+                    },
+                    card2: {
+                        title: "Gestión de KOLs",
+                        desc: "Construcción y fidelización de relaciones de largo plazo con médicos clave, asegurando la adopción y el posicionamiento de especialidades médicas."
+                    },
+                    card3: {
+                        title: "Inteligencia de Mercado",
+                        desc: "Uso avanzado de herramientas como IQVIA/IMS para optimizar rutas, maximizar el ROI del territorio y anticipar tendencias competitivas."
+                    },
+                    card4: {
+                        title: "Marketing Farmacéutico",
+                        desc: "Diseño y ejecución de estrategias de lanzamiento, posicionamiento de marca y organización de simposios médicos de alto impacto científico."
+                    }
+                },
+                experience: {
+                    sectionTag: "Experiencia",
+                    title: "Trayectoria Profesional",
+                    subtitle: "Más de dos décadas construyendo una carrera sólida, adaptable y orientada a resultados en la industria farmacéutica y la gestión comercial.",
+                    job1: { date: "2024 – Presente", company: "Laboratorio Raffo Chile", position: "Especialista en Ventas del Sector Farmacéutico", desc: "Gestión integral del portafolio en el Área Metropolitana. Desarrollo de cartera de KOLs, análisis de mercado con IQVIA y optimización estratégica de rutas de visita para maximizar el ROI del territorio." },
+                    job2: { date: "2017 – 2024", company: "Autocenter_cl / Piamonte S.A.", position: "Ejecutiva de Ventas Senior (Ventas Complejas)", desc: "Gestión de ventas de alto ticket y desarrollo de cartera en mercado B2C/B2B altamente competitivo. Demostración de resiliencia, adaptación al mercado chileno y excelentes habilidades de negociación y cierre." },
+                    job3: { date: "2015 – 2017", company: "EcoPublicidad Ve", position: "Gerente General", desc: "Liderazgo de operatividad y productividad departamental. Diseño e implementación de estrategias digitales y de comunicación para cuentas corporativas, optimizando el retorno de inversión de las campañas." },
+                    job4: { date: "2014 – 2015", company: "LG Electronics", position: "Gerente de Producto – Línea Blanca", desc: "Diseño y ejecución de estrategias de marketing, merchandising y análisis competitivo. Gestión de clientes clave B2B y coordinación de equipos de campo para ejecución de campañas en punto de venta." },
+                    job5: { date: "2011 – 2014", company: "Sanofi", position: "Representante de Ventas", desc: "Promoción científica en Cardiología y Metabolismo, cumpliendo estándares de compliance de multinacional. Organización de actividades de marketing médico y gestión de cartera de +150 médicos especialistas." },
+                    job6: { date: "2006 – 2011", company: "Roche", position: "Representante de Ventas", desc: "Gestión de territorio y promoción de portafolio especializado con metodologías de venta consultiva basada en evidencia científica y construcción de relaciones de confianza con prescriptores." },
+                    job7: { date: "2002 – 2006", company: "Roemmers", position: "Representante de Ventas", desc: "Inicio y consolidación de carrera en la industria farmacéutica, desarrollando habilidades fundamentales en visita médica, conocimiento profundo de producto y manejo estratégico de objeciones." }
+                },
+                skills: {
+                    sectionTag: "Competencias",
+                    title: "Habilidades Profesionales",
+                    subtitle: "Un conjunto integral de competencias técnicas y directivas validadas por más de 22 años de experiencia comprobada.",
+                    cat1: "Ventas & Marketing",
+                    cat2: "Gestión Estratégica",
+                    cat3: "Habilidades Directivas",
+                    tag1: "Ventas Farmacéuticas",
+                    tag2: "Promoción Científica",
+                    tag3: "Marketing de Productos",
+                    tag4: "Lanzamiento de Productos",
+                    tag5: "Dispositivos Médicos",
+                    tag6: "Visitador Médico Senior",
+                    tag7: "Gestión de Territorios",
+                    tag8: "Desarrollo de KOLs",
+                    tag9: "Análisis IQVIA/IMS",
+                    tag10: "Planificación Estratégica",
+                    tag11: "Análisis Competitivo",
+                    tag12: "Regulación Sanitaria",
+                    tag13: "Liderazgo de Equipos",
+                    tag14: "Coordinación de Área",
+                    tag15: "Negociación B2B/B2C",
+                    tag16: "Gestión de Cartera",
+                    tag17: "CRM",
+                    tag18: "Orientación a Resultados"
+                },
+                education: {
+                    sectionTag: "Formación",
+                    title: "Educación y Formación Continua",
+                    subtitle: "Compromiso inquebrantable con la actualización constante y el desarrollo profesional de alto nivel.",
+                    edu1: { school: "Pontificia Universidad Católica de Chile", degree: "Diplomado en Ventas y Marketing Farmacéutico y Dispositivos Médicos" },
+                    edu2: { school: "Universidad Central de Venezuela", degree: "Postgrado en Mercadeo para Empresas" },
+                    edu3: { school: "Universidad Central de Venezuela", degree: "Programa Avanzado de Gerencia en Mercadeo y Competitividad" },
+                    edu4: { school: "Newport University", degree: "Bachelor of Business Administration (B.B.A.)" },
+                    edu5: { school: "Instituto Universitario de Nuevas Profesiones", degree: "TSU en Publicidad y Mercadeo" }
+                },
+                contact: {
+                    sectionTag: "Contacto",
+                    title: "Diálogo Profesional",
+                    subtitle: "Abierta a explorar alianzas estratégicas y roles de alto impacto que requieran una visión consolidada y resultados comprobados en la industria farmacéutica.",
+                    email: "Correo Electrónico",
+                    phone: "Teléfono",
+                    whatsapp: "Mensaje directo"
+                },
+                footer: {
+                    text: "Especialista Senior en Ventas del Sector Farmacéutico • Santiago, Chile"
+                }
+            },
+            en: {
+                pageTitle: "Candy Díaz | Senior Pharmaceutical Sales Specialist",
+                nav: {
+                    about: "Career",
+                    expertise: "Expertise",
+                    experience: "Experience",
+                    skills: "Skills",
+                    education: "Education",
+                    contact: "Contact"
+                },
+                hero: {
+                    years: "YEARS",
+                    badge: "Excellence in Pharmaceutical Sales • Strategic KOL Management",
+                    title: "Senior Pharmaceutical Sales Specialist",
+                    subtitle: "Over 22 years transforming scientific knowledge into strategic commercial value for leading laboratories such as <strong>Roche, Sanofi, and Raffo</strong>. I build high-level alliances based on ethics, evidence, and sustainable results.",
+                    downloadCV: "Download CV",
+                    exploreCareer: "Explore Career"
+                },
+                about: {
+                    sectionTag: "Career",
+                    title: "A Consolidated Career in<br>the Pharmaceutical Industry",
+                    subtitle: "360° business vision, from field scientific promotion to strategic management.",
+                    p1: "I am a Senior Pharmaceutical Sales Specialist with over 22 years of uninterrupted experience, specialized in scientific promotion, comprehensive territory management, and developing high-level relationships with <strong>KOLs (Key Opinion Leaders)</strong>.",
+                    p2: "My career has allowed me to develop a unique business perspective, having led field strategies for elite multinationals such as <strong>Roche and Sanofi</strong>, and complemented this experience with managerial roles that strengthened my analytical capacity, team leadership, and data-driven decision-making.",
+                    p3: "Committed to continuous excellence, I have consolidated my knowledge of the Chilean market and its regulations through the <strong>Diploma in Pharmaceutical Sales and Marketing from Pontificia Universidad Católica de Chile</strong>.",
+                    stat1: "Years of Experience",
+                    stat2: "Elite Laboratories",
+                    stat3: "KOLs in Portfolio",
+                    stat4: "Diploma"
+                },
+                expertise: {
+                    sectionTag: "Expertise",
+                    title: "Areas of Professional Expertise",
+                    subtitle: "High-level competencies that generate tangible and sustainable value for the organization.",
+                    card1: {
+                        title: "Strategic Sales",
+                        desc: "Ethical and evidence-based scientific promotion, ensuring compliance with the highest standards of compliance and corporate governance."
+                    },
+                    card2: {
+                        title: "KOL Management",
+                        desc: "Building and fostering long-term relationships with key physicians, ensuring adoption and positioning of medical specialties."
+                    },
+                    card3: {
+                        title: "Market Intelligence",
+                        desc: "Advanced use of tools such as IQVIA/IMS to optimize routes, maximize territory ROI, and anticipate competitive trends."
+                    },
+                    card4: {
+                        title: "Pharmaceutical Marketing",
+                        desc: "Design and execution of launch strategies, brand positioning, and organization of high-impact scientific medical symposia."
+                    }
+                },
+                experience: {
+                    sectionTag: "Experience",
+                    title: "Professional Trajectory",
+                    subtitle: "Over two decades building a solid, adaptable, and results-oriented career in the pharmaceutical industry and commercial management.",
+                    job1: { date: "2024 – Present", company: "Raffo Laboratory Chile", position: "Pharmaceutical Sales Specialist", desc: "Comprehensive portfolio management in the Metropolitan Area. Development of KOL portfolio, market analysis with IQVIA, and strategic optimization of visit routes to maximize territory ROI." },
+                    job2: { date: "2017 – 2024", company: "Autocenter_cl / Piamonte S.A.", position: "Senior Sales Executive (Complex Sales)", desc: "High-ticket sales management and portfolio development in a highly competitive B2C/B2B market. Demonstrated resilience, adaptation to the Chilean market, and excellent negotiation and closing skills." },
+                    job3: { date: "2015 – 2017", company: "EcoPublicidad Ve", position: "General Manager", desc: "Leadership of departmental operations and productivity. Design and implementation of digital and communication strategies for corporate accounts, optimizing campaign ROI." },
+                    job4: { date: "2014 – 2015", company: "LG Electronics", position: "Product Manager – Home Appliances", desc: "Design and execution of marketing strategies, merchandising, and competitive analysis. Management of B2B key clients and coordination of field teams for campaign execution at point of sale." },
+                    job5: { date: "2011 – 2014", company: "Sanofi", position: "Sales Representative", desc: "Scientific promotion in Cardiology and Metabolism, meeting multinational compliance standards. Organization of medical marketing activities and management of a portfolio of +150 specialist physicians." },
+                    job6: { date: "2006 – 2011", company: "Roche", position: "Sales Representative", desc: "Territory management and specialized portfolio promotion with evidence-based consultative sales methodologies and building trust relationships with prescribers." },
+                    job7: { date: "2002 – 2006", company: "Roemmers", position: "Sales Representative", desc: "Start and consolidation of career in the pharmaceutical industry, developing fundamental skills in medical visits, deep product knowledge, and strategic objection handling." }
+                },
+                skills: {
+                    sectionTag: "Skills",
+                    title: "Professional Skills",
+                    subtitle: "A comprehensive set of technical and managerial competencies validated by over 22 years of proven experience.",
+                    cat1: "Sales & Marketing",
+                    cat2: "Strategic Management",
+                    cat3: "Leadership Skills",
+                    tag1: "Pharmaceutical Sales",
+                    tag2: "Scientific Promotion",
+                    tag3: "Product Marketing",
+                    tag4: "Product Launch",
+                    tag5: "Medical Devices",
+                    tag6: "Senior Medical Representative",
+                    tag7: "Territory Management",
+                    tag8: "KOL Development",
+                    tag9: "IQVIA/IMS Analysis",
+                    tag10: "Strategic Planning",
+                    tag11: "Competitive Analysis",
+                    tag12: "Health Regulation",
+                    tag13: "Team Leadership",
+                    tag14: "Area Coordination",
+                    tag15: "B2B/B2C Negotiation",
+                    tag16: "Portfolio Management",
+                    tag17: "CRM",
+                    tag18: "Results-Oriented"
+                },
+                education: {
+                    sectionTag: "Education",
+                    title: "Education & Continuing Training",
+                    subtitle: "Unwavering commitment to constant updating and high-level professional development.",
+                    edu1: { school: "Pontificia Universidad Católica de Chile", degree: "Diploma in Pharmaceutical Sales and Marketing and Medical Devices" },
+                    edu2: { school: "Universidad Central de Venezuela", degree: "Postgraduate in Marketing for Companies" },
+                    edu3: { school: "Universidad Central de Venezuela", degree: "Advanced Management Program in Marketing and Competitiveness" },
+                    edu4: { school: "Newport University", degree: "Bachelor of Business Administration (B.B.A.)" },
+                    edu5: { school: "Instituto Universitario de Nuevas Profesiones", degree: "TSU in Advertising and Marketing" }
+                },
+                contact: {
+                    sectionTag: "Contact",
+                    title: "Professional Dialogue",
+                    subtitle: "Open to exploring strategic alliances and high-impact roles that require a consolidated vision and proven results in the pharmaceutical industry.",
+                    email: "Email",
+                    phone: "Phone",
+                    whatsapp: "Direct Message"
+                },
+                footer: {
+                    text: "Senior Pharmaceutical Sales Specialist • Santiago, Chile"
+                }
+            }
+        };
+
+        // Cambio de Idioma
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Actualizar atributo lang del HTML
+            document.documentElement.lang = lang;
+            
+            // Actualizar título de la página
+            document.title = translations[lang].pageTitle;
+            
+            // Actualizar todos los elementos con data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = translations[lang];
+                
+                for (const k of keys) {
+                    value = value[k];
+                }
+                
+                if (value) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = value;
+                    } else {
+                        element.innerHTML = value;
+                    }
+                }
+            });
+            
+            // Actualizar botones de idioma
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.classList.remove('active');
+                if (option.getAttribute('data-lang') === lang) {
+                    option.classList.add('active');
+                }
+            });
+        }
+
+        // Event Listener para el toggle de idioma
+        document.getElementById('languageToggle').addEventListener('click', () => {
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            updateLanguage(newLang);
+        });
+
         // Cursor Personalizado
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
@@ -958,6 +1269,11 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
+        });
+
+        // Inicializar idioma al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLanguage(currentLang);
         });
     </script>
 </body>
