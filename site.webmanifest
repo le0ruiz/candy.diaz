@@ -1,0 +1,23 @@
+{
+  "name": "Candy Díaz | Especialista Senior en Ventas del Sector Farmacéutico",
+  "short_name": "Candy Díaz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#003366",
+  "description": "Portafolio profesional de Candy Díaz, Especialista Senior en Ventas del Sector Farmacéutico con más de 22 años de experiencia en laboratorios líderes como Roche, Sanofi y Raffo.",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
